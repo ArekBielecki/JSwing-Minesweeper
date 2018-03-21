@@ -4,8 +4,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class MouseActionHandler implements MouseListener {
-    private GameGUI gameGUI;
-    private GameLogics gameLogics;
     private GameBoard gameBoard;
     private int verticalPos;
     private int horizontalPos;
@@ -19,7 +17,7 @@ public class MouseActionHandler implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-            if(!gameLogics.checkWinningCondition(gameBoard)&&!gameLogics.checkLosingCondition(gameBoard)){
+            if(!GameLogics.checkWinningCondition(gameBoard)&&!GameLogics.checkLosingCondition(gameBoard)){
                 if (SwingUtilities.isLeftMouseButton(e)) {
                     gameBoard.leftMouseButtonAction(verticalPos, horizontalPos);
                 }
@@ -29,11 +27,11 @@ public class MouseActionHandler implements MouseListener {
                 if (SwingUtilities.isMiddleMouseButton(e)) {
                     gameBoard.middleMouseButtonAction(verticalPos, horizontalPos);
                 }
-                if(gameLogics.checkWinningCondition(gameBoard)){
-                    gameGUI.setGameStatusInfo("You won!", Color.green);
+                if(GameLogics.checkWinningCondition(gameBoard)){
+                    GameGUI.setGameStatusInfo("You won!", new Color(33, 150, 49));
                 }
-                if(gameLogics.checkLosingCondition(gameBoard)){
-                    gameGUI.setGameStatusInfo("You lost!", Color.red);
+                if(GameLogics.checkLosingCondition(gameBoard)){
+                    GameGUI.setGameStatusInfo("You lost!", Color.red);
                     gameBoard.revealAllMinedTiles();
                 }
             }

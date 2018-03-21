@@ -29,9 +29,9 @@ public class GameGUI extends JFrame{
     private JSplitPane bottomSplitPane;
 
 
-//    public GameGUI(){
-//        setGameWindow();
-//    }
+    public GameGUI(){
+        setGameWindow();
+    }
 
     public void setGameWindow(){
         setTitle("Minesweeper");
@@ -99,7 +99,8 @@ public class GameGUI extends JFrame{
         boardWidthBox.addItem(10);
         boardWidthBox.addItem(15);
         boardWidthBox.addItem(20);
-        boardWidthBox.setMaximumSize(new Dimension(50,30));
+        boardWidthBox.setPreferredSize(new Dimension(60,30));
+        boardWidthBox.setMaximumSize(new Dimension(60,30));
         settingsPanel.add(boardWidthBox);
 
         settingsPanel.add(Box.createRigidArea(new Dimension(30,50)));
@@ -115,7 +116,8 @@ public class GameGUI extends JFrame{
         boardHeightBox.addItem(10);
         boardHeightBox.addItem(15);
         boardHeightBox.addItem(20);
-        boardHeightBox.setMaximumSize(new Dimension(50,30));
+        boardHeightBox.setPreferredSize(new Dimension(60,30));
+        boardHeightBox.setMaximumSize(new Dimension(60,30));
         settingsPanel.add(boardHeightBox);
 
         settingsPanel.add(Box.createRigidArea(new Dimension(30,50)));

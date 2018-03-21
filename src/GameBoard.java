@@ -258,7 +258,8 @@ public class GameBoard {
     public void revealAllMinedTiles() {
         for (int i = 0; i < boardHeight; i++) {
             for (int j = 0; j < boardWidth; j++) {
-                if (!buttonBoard[i][j].isEnabled() && buttonBoard[i][j].getTileType().equals(FieldType.MINED)) {
+                if ((!buttonBoard[i][j].isEnabled() && buttonBoard[i][j].getTileType().equals(FieldType.MINED)) ||
+                        (!buttonBoard[i][j].isEnabled() && buttonBoard[i][j].getTileType().equals(FieldType.MINED_FLAGGED))) {
                     buttonBoard[i][j].setGameTileAsEnabled();
                     buttonBoard[i][j].setText("M");
                     buttonBoard[i][j].setForeground(Color.red);
